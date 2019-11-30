@@ -10,13 +10,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 import ru.semenovmy.learning.currenciesconverter.R;
+import ru.semenovmy.learning.currenciesconverter.data.CurrencyRepository;
 import ru.semenovmy.learning.currenciesconverter.data.model.Currency;
 import ru.semenovmy.learning.currenciesconverter.presenter.CurrencyPresenter;
 
 public class MainActivity extends AppCompatActivity implements ICurrencyView {
 
     private Button mConvertButton;
-    private CurrencyPresenter mCurrencyPresenter = new CurrencyPresenter(this);
+    private CurrencyPresenter mCurrencyPresenter = new CurrencyPresenter(this, new CurrencyRepository());
     private CurrencyAdapter mCurrencyAdapter;
     private EditText mEditText;
     private List<Currency> mCurrencyList;

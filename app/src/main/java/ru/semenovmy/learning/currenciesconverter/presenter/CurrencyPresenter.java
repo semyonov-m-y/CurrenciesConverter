@@ -13,9 +13,9 @@ public class CurrencyPresenter {
     private CurrencyRepository mCurrencyRepository;
     private ConversionRate mConversionRate;
 
-    public CurrencyPresenter(ICurrencyView mainActivity) {
+    public CurrencyPresenter(ICurrencyView mainActivity, CurrencyRepository currencyRepository) {
         mWeakReference = new WeakReference<>(mainActivity);
-        mCurrencyRepository = new CurrencyRepository();
+        mCurrencyRepository = currencyRepository;
     }
 
     public void loadCurrency() {
